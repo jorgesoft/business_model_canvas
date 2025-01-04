@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.canvas-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: calc(100vh - 70px);
+}
+.canvas-section {
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.canvas-title {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.canvas-title i {
+    margin-right: 5px;
+}
+textarea {
+    resize: none;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.business-name-label {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.business-name-label input {
+    margin-left: 5px;
+    width: 200px;
+}
+/* Grid placement */
+#key-partnerships {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+#key-activities {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+#key-resources {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+#value-propositions {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+#customer-relationships {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+}
+#channels {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+#customer-segments {
+    grid-column: 5 / 6;
+    grid-row: 1 / 3;
+}
+#cost-structure {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+#revenue-streams {
+    grid-column: 3 / 6;
+    grid-row: 3 / 4;
+}
