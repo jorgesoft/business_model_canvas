@@ -9,7 +9,9 @@ document.getElementById('save-btn').addEventListener('click', () => {
         'Channels': document.getElementById('channels-text').value,
         'Customer Segments': document.getElementById('customer-segments-text').value,
         'Cost Structure': document.getElementById('cost-structure-text').value,
-        'Revenue Streams': document.getElementById('revenue-streams-text').value
+        'Revenue Streams': document.getElementById('revenue-streams-text').value,
+        'Business Hypothesis': document.getElementById('business-hypothesis').value,
+        'Key Assumptions': document.getElementById('key-assumptions').value
     };
 
     const yamlStr = jsyaml.dump(data);
@@ -43,6 +45,8 @@ document.getElementById('load-btn').addEventListener('click', () => {
             document.getElementById('customer-segments-text').value = data['Customer Segments'] || '';
             document.getElementById('cost-structure-text').value = data['Cost Structure'] || '';
             document.getElementById('revenue-streams-text').value = data['Revenue Streams'] || '';
+            document.getElementById('business-hypothesis').value = data['Business Hypothesis'] || '';
+            document.getElementById('key-assumptions').value = data['Key Assumptions'] || '';
         };
 
         reader.readAsText(file);
