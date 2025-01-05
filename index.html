@@ -14,10 +14,13 @@
         <h2>
             Business Model Canvas 
             <i id="info-icon" class="bi bi-info-circle" data-bs-toggle="tooltip" title="The Business Model Canvas is © Strategyzer AG, licensed under CC BY-SA 3.0. This app is an adaptation and is distributed under the same license. For details, see https://creativecommons.org/licenses/by-sa/3.0/"></i>
+            <a href="https://github.com/jorgesoft/business_model_canvas" target="_blank">
+                <i class="bi bi-github" title="View this project on GitHub"></i>
+            </a>
         </h2>
         <div class="d-flex align-items-center">
-            <label class="business-name-label">
-                Business Name:
+            <label class="business-name-label ">
+                <strong>Name:</strong>
                 <input type="text" id="business-name" class="form-control">
             </label>
             <button id="save-btn" class="btn btn-primary me-2">Save as YAML</button>
@@ -31,7 +34,7 @@
     <div class="canvas-container">
         <div id="key-partnerships" class="canvas-section">
             <div class="canvas-title">
-                <i class="bi bi-people"></i>
+                <i class="bi bi-link-45deg"></i>
                 Key Partnerships
             </div>
             <textarea id="key-partnerships-text" class="form-control"></textarea>
@@ -102,11 +105,17 @@
         </div>
         <div class="offcanvas-body">
             <div class="mb-3">
-                <label for="business-hypothesis" class="form-label">Business Hypothesis</label>
+                <i class="bi bi-lightbulb"></i>
+                <strong>
+                    <label for="business-hypothesis" class="form-label">Business Hypothesis</label>
+                </strong>
                 <textarea id="business-hypothesis" class="form-control" rows="3"></textarea>
             </div>
             <div class="mb-3">
-                <label for="key-assumptions" class="form-label">Key Assumptions</label>
+                <i class="bi bi-list-task"></i>
+                <strong>
+                    <label for="key-assumptions" class="form-label">Key Assumptions</label>
+                </strong>
                 <textarea id="key-assumptions" class="form-control" rows="3"></textarea>
             </div>
         </div>
