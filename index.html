@@ -23,8 +23,24 @@
                 <strong>Name:</strong>
                 <input type="text" id="business-name" class="form-control">
             </label>
-            <button id="save-btn" class="btn btn-primary me-2">Save as YAML</button>
-            <button id="load-btn" class="btn btn-primary me-2">Load from YAML</button>
+            <div class="btn-group">
+                <button id="save-btn" class="btn btn-primary dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Save
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" id="save-to-file">Save to file</a></li>
+                    <li><a class="dropdown-item" href="#" id="copy-yaml">Copy YAML</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button id="load-btn" class="btn btn-primary dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Load
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" id="load-from-file">Load from file</a></li>
+                    <li><a class="dropdown-item" href="#" id="paste-yaml">Paste YAML</a></li>
+                </ul>
+            </div>            
             <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">Hypothesis</button>
             <input type="file" id="yaml-file" class="d-none">
         </div>

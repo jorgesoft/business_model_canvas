@@ -1,4 +1,5 @@
-document.getElementById('save-btn').addEventListener('click', () => {
+// Save to file functionality
+document.getElementById('save-to-file').addEventListener('click', () => {
     const data = {
         'Business Name': document.getElementById('business-name').value,
         'Key Partnerships': document.getElementById('key-partnerships-text').value,
@@ -25,7 +26,34 @@ document.getElementById('save-btn').addEventListener('click', () => {
     URL.revokeObjectURL(url);
 });
 
-document.getElementById('load-btn').addEventListener('click', () => {
+// Copy YAML to clipboard functionality
+document.getElementById('copy-yaml').addEventListener('click', () => {
+    const data = {
+        'Business Name': document.getElementById('business-name').value,
+        'Key Partnerships': document.getElementById('key-partnerships-text').value,
+        'Key Activities': document.getElementById('key-activities-text').value,
+        'Key Resources': document.getElementById('key-resources-text').value,
+        'Value Propositions': document.getElementById('value-propositions-text').value,
+        'Customer Relationships': document.getElementById('customer-relationships-text').value,
+        'Channels': document.getElementById('channels-text').value,
+        'Customer Segments': document.getElementById('customer-segments-text').value,
+        'Cost Structure': document.getElementById('cost-structure-text').value,
+        'Revenue Streams': document.getElementById('revenue-streams-text').value,
+        'Business Hypothesis': document.getElementById('business-hypothesis').value,
+        'Key Assumptions': document.getElementById('key-assumptions').value
+    };
+
+    const yamlStr = jsyaml.dump(data);
+
+    navigator.clipboard.writeText(yamlStr).then(() => {
+        alert('YAML content copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy YAML: ', err);
+    });
+});
+
+// Load YAML from file functionality
+document.getElementById('load-from-file').addEventListener('click', () => {
     const fileInput = document.getElementById('yaml-file');
     fileInput.click();
 
@@ -51,6 +79,32 @@ document.getElementById('load-btn').addEventListener('click', () => {
 
         reader.readAsText(file);
     });
+});
+
+// Paste YAML functionality
+document.getElementById('paste-yaml').addEventListener('click', () => {
+    const yamlInput = prompt('Paste your YAML content here:');
+
+    if (yamlInput) {
+        try {
+            const data = jsyaml.load(yamlInput);
+            document.getElementById('business-name').value = data['Business Name'] || '';
+            document.getElementById('key-partnerships-text').value = data['Key Partnerships'] || '';
+            document.getElementById('key-activities-text').value = data['Key Activities'] || '';
+            document.getElementById('key-resources-text').value = data['Key Resources'] || '';
+            document.getElementById('value-propositions-text').value = data['Value Propositions'] || '';
+            document.getElementById('customer-relationships-text').value = data['Customer Relationships'] || '';
+            document.getElementById('channels-text').value = data['Channels'] || '';
+            document.getElementById('customer-segments-text').value = data['Customer Segments'] || '';
+            document.getElementById('cost-structure-text').value = data['Cost Structure'] || '';
+            document.getElementById('revenue-streams-text').value = data['Revenue Streams'] || '';
+            document.getElementById('business-hypothesis').value = data['Business Hypothesis'] || '';
+            document.getElementById('key-assumptions').value = data['Key Assumptions'] || '';
+        } catch (error) {
+            alert('Invalid YAML format. Please try again.');
+            console.error('Error parsing YAML:', error);
+        }
+    }
 });
 
 // Initialize Bootstrap tooltips
