@@ -95,3 +95,69 @@ header h2 {
     resize: both; 
     overflow: auto; 
 }
+
+/* Light-dark mode */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Header Styles for Dark Mode */
+header {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode header {
+    background-color: #2a2a2a;
+    border-bottom: 1px solid #444;
+    color: #ffffff;
+}
+
+/* Textarea Styles for Dark Mode */
+textarea {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode textarea {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+/* Input Styles for Dark Mode */
+input[type="text"] {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode input[type="text"] {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+/* Offcanvas Styles for Dark Mode */
+.offcanvas {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .offcanvas {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+/* Canvas Section Borders */
+body.dark-mode .canvas-section {
+    border-color: #555555;
+}

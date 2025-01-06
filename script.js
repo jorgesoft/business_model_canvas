@@ -112,3 +112,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     const tooltipList = tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 });
+
+// Light-dark mode functinality
+const themeSwitch = document.getElementById('darkModeSwitch');
+const themeIcon = document.getElementById('theme-icon');
+
+// Set initial theme to light
+document.body.classList.add('light-mode');
+
+// Toggle theme
+themeSwitch.addEventListener('change', () => {
+    if (themeSwitch.checked) {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('bi-brightness-high');
+        themeIcon.classList.add('bi-moon');
+    } else {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+        themeIcon.classList.remove('bi-moon');
+        themeIcon.classList.add('bi-brightness-high');
+    }
+});
